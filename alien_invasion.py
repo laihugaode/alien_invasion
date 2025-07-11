@@ -79,7 +79,23 @@ class AlienInvasion:
         """创建外星人舰队"""
         # 创建一个外星人
         alien = Alien(self)
+        alien_width = alien.rect.width
+        current_x = alien_width
+        while current_x < (self.settings.screen_width - 2 * alien_width):
+            new_alien = Alien(self)
+            new_alien.x = current_x
+            new_alien.rect.x = current_x
+            self.aliens.add(new_alien)
+            current_x += 2 * alien_width
         self.aliens.add(alien)
+
+    
+    def _create_alien(self,x_position):
+        """创建一个新的外星人并添加到编组中"""
+        new_alien = Alien(self)
+        new_alien.x = x_position
+        new_alien.rect.x = x_position
+        self.aliens.add(new_alien)
 
 
     def _update_screen(self):
