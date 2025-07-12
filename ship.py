@@ -39,3 +39,8 @@ class Ship:
 
         # 更新rect对象的位置
         self.rect.x = self.x
+
+
+    def center_ship(self):
+        # 将飞船放置在屏幕底部中央
+        self.rect.midbottom = self.screen_rect.midbottom
