@@ -236,7 +236,7 @@ class AlienInvasion:
             # 暂停一会儿
             sleep(0.5)
         else:
-            self.stats.game_active = False
+            self.game_active = False
             pygame.mouse.set_visible(True)
 
 
